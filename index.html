@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- TITLE -->
+    <title>Color Scheme Generator</title>
+  </head>
+  <body>
+    <header>
+      <input
+        id="input-color"
+        class="input-color"
+        type="color"
+        value="#00B344"
+      />
+      <select name="scheme" id="color-scheme" class="color-scheme">
+        <option value="Monochrome">Monochrome</option>
+        <option value="Monochrome-dark">Monochrome-dark</option>
+        <option value="Monochrome-light">Monochrome-light</option>
+        <option value="Analogic">Analogic</option>
+        <option value="Complement">Complement</option>
+        <option value="Analogic-complement">Analogic-complement</option>
+        <option value="Triad">Triad</option>
+      </select>
+      <!-- <label for="number-of-colors">Number of Colors</label> -->
+      <select
+        name="number-of-colors"
+        id="number-of-colors"
+        class="number-of-colors"
+      >
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6" selected="selected">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <button id="get-color-scheme-button" class="get-color-scheme-button">
+        Get color scheme
+      </button>
+    </header>
+    <main>
+      <div id="colors-container" class="colors-container"></div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

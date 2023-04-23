@@ -1,0 +1,77 @@
+/* GENERAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 15px;
+}
+
+.input-color {
+  height: 43px;
+  width: 50px;
+}
+
+.input-color,
+.color-scheme,
+.number-of-colors,
+.get-color-scheme-button {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.color-scheme,
+.number-of-colors,
+.get-color-scheme-button {
+  font-family: inherit;
+}
+
+.color-scheme,
+.number-of-colors {
+  padding: 11px 9px;
+}
+
+.color-scheme {
+  color: #111827;
+}
+
+.get-color-scheme-button {
+  color: #374151;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 13px 11px;
+}
+
+/* MAIN COLORS AREA */
+
+.colors-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.color-box {
+  width: 1fr;
+}
+
+.color {
+  height: 300px;
+  width: 100%;
+}
+
+.shown-color-hex {
+  text-align: center;
+}
