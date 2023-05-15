@@ -1,19 +1,30 @@
 const baseUrlWithEndpoint = "https://www.thecolorapi.com/scheme";
 
+const colorInputEl = document.getElementById("input-color");
+const colorSchemeEl = document.getElementById("color-scheme");
+const numberOfColorsEl = document.getElementById("number-of-colors");
 const getColorSchemeButtonEl = document.getElementById(
   "get-color-scheme-button"
 );
-const colorInputEl = document.getElementById("input-color");
 const colorContainerEl = document.getElementById("colors-container");
-const colorSchemeEl = document.getElementById("color-scheme");
-const numberOfColorsEl = document.getElementById("number-of-colors");
 
 getColorSchemeButtonEl.addEventListener("click", getColorScheme);
+
+//grabs hex value of clicked color or text and copies to clipboard
+document.addEventListener("click", (e) => {
+  if (e.target.parentElement.className === `color-box`) {
+    const targetColorBox = e.target.parentElement;
+    const targetColorHex = targetColorBox.childNodes[3].innerText;
+    navigator.clipboard.writeText(targetColorHex);
+    alert(`Copied: ${targetColorHex}`);
+  }
+});
 
 function getColorScheme() {
   const seedColorCleanHex = colorInputEl.value.substring(1);
   const colorSchemeSelection = colorSchemeEl.value.toLowerCase();
   const numberOfColors = numberOfColorsEl.value;
+
   const url = `${baseUrlWithEndpoint}?hex=${seedColorCleanHex}&mode=${colorSchemeSelection}&count=${numberOfColors}`;
 
   fetch(url)
@@ -23,12 +34,9 @@ function getColorScheme() {
       data.colors.forEach((color) => {
         colorsArray.push(color.hex.value);
       });
-      renderColors(colorsArray);
-    });
-}
 
-function renderColors(colorsArray) {
-  colorContainerEl.innerHTML = getColorsHtml(colorsArray);
+      colorContainerEl.innerHTML = getColorsHtml(colorsArray);
+    });
 }
 
 function getColorsHtml(colorsArray) {
