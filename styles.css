@@ -38,6 +38,7 @@ header {
 .number-of-colors,
 .get-color-scheme-button {
   font-family: inherit;
+  font-size: 0.75rem;
 }
 
 .color-scheme,
@@ -51,9 +52,8 @@ header {
 
 .get-color-scheme-button {
   color: #374151;
-  font-size: 0.75rem;
   font-weight: 500;
-  padding: 13px 11px;
+  padding: 0.5em 0.75em;
 }
 
 /* MAIN COLORS AREA */
